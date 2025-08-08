@@ -2,7 +2,8 @@
 #include <Windows.h>
 
 #define MODE 1
-#define ADD(a,b) a+b
+int add(int a, int b);
+
 int main()
 {
     SetConsoleCP(1251);
@@ -19,11 +20,16 @@ int main()
     std::cout << "Введите число 2: ";
     std::cin >> b;
 
-    std::cout << "Результат сложения: " << ADD(a, b) << std::endl;
+    std::cout << "Результат сложения: " << add(a, b) << std::endl;
 #else
     std::cout << "Неизвестный режим. Завершение работы" << std::endl;
 #endif
 #else
     std::cout << "Определите идентификатор MODE" << std::endl;
 #endif 
+}
+
+int add(int a, int b)
+{
+    return a + b;
 }
